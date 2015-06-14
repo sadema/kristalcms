@@ -13,20 +13,20 @@ import javax.ws.rs.core.UriInfo;
  */
 public class CustomerResourceImpl implements CustomerResource {
 
-//    @Inject
-//    private Session session;
+    @Inject
+    private Session session;
 
     @Override
     public CustomerData getCustomer(String customerId, UriInfo uriInfo)  {
         System.out.println(uriInfo.getPath());
-//        String path = uriInfo.getPath();
-//        try {
-//            Node node = session.getNode(path);
-//        } catch (RepositoryException e) {
-//            e.printStackTrace();
-//        }
         CustomerData customerData = new CustomerData();
-        customerData.setNodename("prima");
+        String path = uriInfo.getPath();
+        try {
+            Node node = session.getNode(path);
+            customerData.setNodename(node.getName());
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
         return customerData;
     }
 }

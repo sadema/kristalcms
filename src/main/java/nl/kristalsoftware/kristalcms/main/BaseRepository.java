@@ -7,6 +7,6 @@ import nl.kristalsoftware.kristalcms.cms.CmsContentHandler;
  */
 public interface BaseRepository {
 
-    public void checkForContent(String s, CmsContentHandler cmsContentHandler);
+    //public void checkForContent(String s, CmsContentHandler cmsContentHandler);
 
 }
