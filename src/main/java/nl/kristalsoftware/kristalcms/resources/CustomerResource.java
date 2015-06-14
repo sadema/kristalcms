@@ -3,6 +3,8 @@ package nl.kristalsoftware.kristalcms.resources;
 import nl.kristalsoftware.kristalcms.resourcedata.CustomerData;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
 
 /**
  * Created by sjoerdadema on 11-06-15.
@@ -14,6 +16,6 @@ public interface CustomerResource {
 
     @GET
     @Path("{customerId}")
-    CustomerData getCustomer(@PathParam("customerId") String customerId);
+    CustomerData getCustomer(@PathParam("customerId") String customerId, @Context UriInfo uriInfo);
 
 }
